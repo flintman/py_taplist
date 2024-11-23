@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background for body */
-    color: #e0e0e0; /* Light text for readability */
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
 }
 
 .center {
@@ -16,20 +16,20 @@ body {
     left: 10px;
     font-size: 24px;
     cursor: pointer;
-    color: #e0e0e0; /* Match text color */
+    color: #e0e0e0; /* Light icon color */
 }
 
 .beer {
-    border: 1px solid #333; /* Subtle border for dark mode */
+    border: 1px solid #333; /* Darker border */
     margin: 20px;
     padding: 15px;
     border-radius: 10px;
-    background-color: #1e1e1e; /* Slightly lighter background */
+    background-color: #1e1e1e; /* Dark card background */
 }
 
 .beer h2 {
     margin-bottom: 10px;
-    color: #ffffff; /* Ensure headings are bright and readable */
+    color: #ffffff; /* Brighter text for headers */
 }
 
 .clearfix {
@@ -39,39 +39,42 @@ body {
 .ibu, .srm {
     margin-left: 15px;
     display: inline-block;
+    color: #e0e0e0;
 }
 
 .srm {
     padding: 3px 10px;
     color: white;
     border-radius: 5px;
+    background-color: #555; /* Neutral SRM background */
 }
 
 .tap-list-link {
     display: inline-block;
     margin-top: 10px;
-    color: #64b5f6; /* Light blue for links */
+    color: #5e98fc; /* Subtle blue link */
     text-decoration: none;
 }
 
 .tap-list-link:hover {
     text-decoration: underline;
-    color: #90caf9; /* Slightly lighter blue on hover */
+    color: #89b5ff; /* Brighter blue on hover */
 }
 
 .admin-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #333; /* Subtle border for container */
+    border: 1px solid #333; /* Darker border */
     border-radius: 10px;
-    background-color: #1e1e1e; /* Match beer card background */
+    background-color: #1e1e1e; /* Darker background */
 }
 
 .admin-container form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: #e0e0e0; /* Text color for form labels */
 }
 
 .folder-section {
@@ -96,33 +99,34 @@ body {
 .folders-container select {
     width: 100%;
     height: 200px;
-    background-color: #2e2e2e; /* Dark background for select boxes */
-    color: #e0e0e0; /* Light text for options */
-    border: 1px solid #444; /* Subtle border */
+    background-color: #2b2b2b; /* Dark dropdown background */
+    color: #e0e0e0; /* Light dropdown text */
+    border: 1px solid #444; /* Dark border */
     border-radius: 5px;
 }
 
-button {
-    background-color: #424242; /* Dark button background */
-    color: #e0e0e0; /* Light button text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.wrapsAllBeersContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
-button:hover {
-    background-color: #616161; /* Slightly lighter background on hover */
+.holdsAllTheBeers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-a.button {
-    background-color: #424242; /* Match button style */
-    color: #e0e0e0;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+.oneBeer {
+    border: 1px solid #333; /* Darker border */
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #1e1e1e; /* Dark card background */
 }
 
-a.button:hover {
-    background-color: #616161;
+.oneBeer h2 {
+    margin: 0 0 10px;
+    color: #ffffff; /* Brighter header text */
 }
