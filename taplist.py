@@ -14,6 +14,7 @@ class TaplistApp:
         self.title = self.config.get("title", "Enter your Title Here")
         self.api_key = self.config.get("api_key", "Enter API key")
         self.selected_theme = self.config.get("selected_theme", "light")
+        self.refresh_interval = self.config.get("refresh_interval", 3600)
         self.folders = self.config.get("folders", [])
         self.beers = []
 
@@ -85,7 +86,8 @@ class TaplistApp:
             beers=self.beers,
             srm_color=self.srm_color,
             title=self.title,
-            message=message
+            message=message,
+            refresh_interval=self.refresh_interval
         )
 
 
@@ -118,6 +120,12 @@ class TaplistApp:
                     self.api_key = new_api_key
                     self.config["api_key"] = self.api_key
 
+            if "refresh_interval" in request.form:
+                new_refresh_interval = request.form.get("refresh_interval", "").strip()
+                if new_refresh_interval != self.refresh_interval:
+                    self.refresh_interval = new_refresh_interval
+                    self.config["refresh_interval"] = self.refresh_interval
+
             if "theme" in request.form:
                 selected_theme = request.form.get("theme", "").strip()
                 self.config["selected_theme"] = selected_theme
@@ -147,7 +155,8 @@ class TaplistApp:
             selected_theme=self.selected_theme,
             selected_folders=selected_folders,
             unselected_folders=unselected_folders,
-            message=message
+            message=message,
+            refresh_interval=self.refresh_interval
         )
 
     def fetch_folders_from_api(self):
