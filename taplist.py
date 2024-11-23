@@ -233,7 +233,7 @@ class TaplistApp:
 
     def run(self):
         """Run the Flask app."""
-        self.app.run(debug=True)
+        self.app.run(host="0.0.0.0", port=5000, debug=True)
 
 if __name__ == "__main__":
     app = TaplistApp()
