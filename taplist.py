@@ -93,6 +93,7 @@ class TaplistApp:
         message = None
 
         if request.method == "POST":
+            message = ""
             if "title" in request.form:
                 self.title = request.form.get("title", self.title)
                 self.config["title"] = self.title
@@ -116,7 +117,7 @@ class TaplistApp:
                 if new_api_key != self.api_key:
                     self.api_key = new_api_key
                     self.config["api_key"] = self.api_key
-    
+
             if "theme" in request.form:
                 selected_theme = request.form.get("theme", "").strip()
                 self.config["selected_theme"] = selected_theme
@@ -126,15 +127,13 @@ class TaplistApp:
             if all_folders:
                 self.folders = all_folders
                 self.config["folders"] = self.folders
-                message = "API key updated successfully, and folders refreshed."
+                message += "API key updated successfully, and folders refreshed.\n"
             else:
-                message = "Invalid API key. Please check and try again."
-                self.api_key = ""
-                self.config["api_key"] = ""
+                message += "Invalid API key. Please check and try again.\n"
 
 
             self.save_config()
-            message = "Changes saved successfully."
+            message += "Changes saved successfully."
 
         all_folders = self.fetch_folders_from_api()
 
