@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.gear {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.beer {
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.beer h2 {
+    margin-bottom: 10px;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+.ibu, .srm {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.srm {
+    padding: 3px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.tap-list-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.tap-list-link:hover {
+    text-decoration: underline;
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.folder-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.folders-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    width: 100%;
+    height: 200px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <a href="/admin" class="gear">⚙️</a>
+    <h1 class="center">{{ title }}</h1>
+
+    {% if message %}
+        <p class="center">{{ message }}</p>
+    {% elif beers %}
+        {% for beer in beers %}
+        <div class="beer">
+            <h2>{{ beer.title }}</h2>
+            <p><b>Style:</b> {{ beer.stylename }}</p>
+            <p class="clearfix">
+                <b>ABV:</b> {{ beer.abv_alt | round(2) }}%
+                <span class="ibu"><b>IBU:</b> {{ beer.ibutinseth }}</span>
+                <span class="srm" style="background-color: {{ srm_color(beer.srmmorey) }}">{{ beer.srmmorey }}</span>
+            </p>
+            <p><b>Brew Date:</b> {{ beer.userdate }}</p>
+            <a href="https://www.brewersfriend.com/homebrew/recipe/view/{{ beer.id }}" class="tap-list-link" target="_blank">Check out recipe on BrewersFriend.com</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="center">No beers to display.</p>
+    {% endif %}
+</body>
+</html>
