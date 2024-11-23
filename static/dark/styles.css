@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background for body */
+    color: #e0e0e0; /* Light text for readability */
+}
+
+.center {
+    text-align: center;
+}
+
+.gear {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e0e0e0; /* Match text color */
+}
+
+.beer {
+    border: 1px solid #333; /* Subtle border for dark mode */
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #1e1e1e; /* Slightly lighter background */
+}
+
+.beer h2 {
+    margin-bottom: 10px;
+    color: #ffffff; /* Ensure headings are bright and readable */
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+.ibu, .srm {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.srm {
+    padding: 3px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.tap-list-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #64b5f6; /* Light blue for links */
+    text-decoration: none;
+}
+
+.tap-list-link:hover {
+    text-decoration: underline;
+    color: #90caf9; /* Slightly lighter blue on hover */
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #333; /* Subtle border for container */
+    border-radius: 10px;
+    background-color: #1e1e1e; /* Match beer card background */
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.folder-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.folders-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folders-container select {
+    width: 100%;
+    height: 200px;
+    background-color: #2e2e2e; /* Dark background for select boxes */
+    color: #e0e0e0; /* Light text for options */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 5px;
+}
+
+button {
+    background-color: #424242; /* Dark button background */
+    color: #e0e0e0; /* Light button text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #616161; /* Slightly lighter background on hover */
+}
+
+a.button {
+    background-color: #424242; /* Match button style */
+    color: #e0e0e0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #616161;
+}

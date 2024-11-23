@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/dark/styles.css">
 </head>
-<body>
+<body class="{{ selected_theme }}">
     <h1 class="center">Admin Panel</h1>
     <div class="admin-container">
         <form method="POST">
@@ -17,6 +17,13 @@
             <h2>Brewers Friend API Key</h2>
             <label for="api_key">API Key:</label>
             <input type="text" id="api_key" name="api_key" value="{{ api_key }}">
+
+            <h2>Select Theme</h2>
+            <label for="theme">Theme:</label>
+            <select id="theme" name="theme">
+                <option value="light" {% if selected_theme == "light" %}selected{% endif %}>Light</option>
+                <option value="dark" {% if selected_theme == "dark" %}selected{% endif %}>Dark</option>
+            </select>
 
             <h2>Manage Folders</h2>
             <div class="folders-container">

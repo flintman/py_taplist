@@ -13,6 +13,7 @@ class TaplistApp:
         self.config = self.load_config()
         self.title = self.config.get("title", "Enter your Title Here")
         self.api_key = self.config.get("api_key", "Enter API key")
+        self.selected_theme = self.config.get("selected_theme", "light")
         self.folders = self.config.get("folders", [])
         self.beers = []
 
@@ -24,7 +25,7 @@ class TaplistApp:
         if os.path.exists(self.CONFIG_FILE):
             with open(self.CONFIG_FILE, "r") as file:
                 return json.load(file)
-        return {"api_key": "Enter API key", "title": "Enter your Title Here", "folders": []}
+        return {"api_key": "Enter API key", "title": "Enter your Title Here", "selected_theme": "light", "folders": []}
 
     def save_config(self):
         with open(self.CONFIG_FILE, "w") as file:
@@ -80,7 +81,7 @@ class TaplistApp:
             message = "No beers available. Try adding some to your selected folders."
 
         return render_template(
-            "taplist.html",
+            f"themes/{self.selected_theme}/taplist.html",
             beers=self.beers,
             srm_color=self.srm_color,
             title=self.title,
@@ -115,6 +116,11 @@ class TaplistApp:
                 if new_api_key != self.api_key:
                     self.api_key = new_api_key
                     self.config["api_key"] = self.api_key
+    
+            if "theme" in request.form:
+                selected_theme = request.form.get("theme", "").strip()
+                self.config["selected_theme"] = selected_theme
+                self.selected_theme = selected_theme
 
             all_folders = self.fetch_folders_from_api()
             if all_folders:
@@ -126,6 +132,7 @@ class TaplistApp:
                 self.api_key = ""
                 self.config["api_key"] = ""
 
+
             self.save_config()
             message = "Changes saved successfully."
 
@@ -135,9 +142,10 @@ class TaplistApp:
         unselected_folders = [folder for folder in all_folders if folder not in selected_folders]
 
         return render_template(
-            "admin.html",
+            f"themes/{self.selected_theme}/admin.html",
             title=self.title,
             api_key=self.api_key,
+            selected_theme=self.selected_theme,
             selected_folders=selected_folders,
             unselected_folders=unselected_folders,
             message=message

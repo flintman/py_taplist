@@ -1,7 +1,7 @@
 {
     "api_key": "Enter API key",
     "title": "Enter your Title Here",
+    "selected_theme": "light",
     "folders": [],
-    "selected_folders": [
-    ]
+    "selected_folders": []
 }
