@@ -26,6 +26,19 @@ h3 {
     color: #b0b0b0;
 }
 
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #a4a7ab;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
 .center {
     text-align: center;
 }
