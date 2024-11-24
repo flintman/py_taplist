@@ -17,15 +17,22 @@
                 <p class="center">{{ message }}</p>
             {% elif beers %}
                 {% for beer in beers %}
-                <div class="oneBeer">
-                    <h2>{{ beer.title }}</h2>
-                    <p><b>Style:</b> {{ beer.stylename }}</p>
-                    <p>
-                        <b>ABV:</b> {{ beer.abv_alt | round(2) }}%
-                        <span class="ibu"><b>IBU:</b> {{ beer.ibutinseth }}</span>
-                        <span class="srm" style="background-color: {{ srm_color(beer.srmmorey) }}"><b>SRM:</b>{{ beer.srmmorey }}</span>
-                    </p>
-                    <p><b>Brew Date:</b> {{ beer.userdate }}</p>
+                <div class="tapHandleContainer">
+                    <!-- Tap Handle -->
+                    <div class="tapHandle">
+                        <div class="tapNumber">{{ loop.index }}</div>
+                    </div>
+                    <!-- Beer Block -->
+                    <div class="oneBeer">
+                        <h2>{{ beer.title }}</h2>
+                        <p><b>Style:</b> {{ beer.stylename }}</p>
+                        <p>
+                            <b>ABV:</b> {{ beer.abv_alt | round(2) }}%
+                            <span class="ibu"><b>IBU:</b> {{ beer.ibutinseth }}</span>
+                            <span class="srm" style="background-color: {{ srm_color(beer.srmmorey) }}"><b>SRM:</b>{{ beer.srmmorey }}</span>
+                        </p>
+                        <p><b>Brew Date:</b> {{ beer.userdate }}</p>
+                    </div>
                 </div>
                 {% endfor %}
             {% else %}
