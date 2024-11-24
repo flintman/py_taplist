@@ -5,6 +5,15 @@ body {
     padding: 0;
     background-color: #121212;
     color: #e0e0e0;
+    background: url('/static/images/background.jpg') no-repeat center center;
+}
+h1 {
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    max-width: 1000px;
+    margin: 0 auto; /* Centers horizontally */
+    padding: 20px;  /* Adds some padding around the text */
+    text-align: center; /* Centers the text inside the h1 */
 }
 
 h2 {
@@ -115,14 +124,17 @@ h3 {
 }
 
 .wrapsAllBeersContainer {
-    display: flex;
-    justify-content: center;
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #1e1e1e;
 }
 
 .holdsAllTheBeers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 1200px;
