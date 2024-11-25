@@ -13,7 +13,8 @@ class TaplistApp:
         self.config = self.load_config()
         self.title = self.config.get("title", "Enter your Title Here")
         self.api_key = self.config.get("api_key", "Enter API key")
-        self.selected_theme = self.config.get("selected_theme", "light")
+        self.selected_theme = self.config.get("selected_theme", "theme_one")
+        self.selected_theme_style = self.config.get("selected_theme_style", "light")
         self.refresh_interval = self.config.get("refresh_interval", 3600)
         self.folders = self.config.get("folders", [])
         self.beers = []
@@ -26,7 +27,7 @@ class TaplistApp:
         if os.path.exists(self.CONFIG_FILE):
             with open(self.CONFIG_FILE, "r") as file:
                 return json.load(file)
-        return {"api_key": "Enter API key", "title": "Enter your Title Here", "selected_theme": "light", "folders": []}
+        return {"api_key": "Enter API key", "title": "Enter your Title Here", "selected_theme": "theme_one", "selected_theme_style": "light", "folders": []}
 
     def save_config(self):
         with open(self.CONFIG_FILE, "w") as file:
@@ -82,11 +83,13 @@ class TaplistApp:
             message = "No beers available. Try adding some to your selected folders."
 
         return render_template(
-            f"themes/{self.selected_theme}/taplist.html",
+            f"{self.selected_theme}/taplist.html",
             beers=self.beers,
             srm_color=self.srm_color,
             title=self.title,
             message=message,
+            selected_theme=self.selected_theme,
+            selected_theme_style=self.selected_theme_style,
             refresh_interval=self.refresh_interval
         )
 
@@ -131,6 +134,11 @@ class TaplistApp:
                 self.config["selected_theme"] = selected_theme
                 self.selected_theme = selected_theme
 
+            if "theme_style" in request.form:
+                selected_theme_style = request.form.get("theme_style", "").strip()
+                self.config["selected_theme_style"] = selected_theme_style
+                self.selected_theme_style = selected_theme_style
+
             all_folders = self.fetch_folders_from_api()
             if all_folders:
                 self.folders = all_folders
@@ -149,10 +157,11 @@ class TaplistApp:
         unselected_folders = [folder for folder in all_folders if folder not in selected_folders]
 
         return render_template(
-            f"themes/{self.selected_theme}/admin.html",
+            f"{self.selected_theme}/admin.html",
             title=self.title,
             api_key=self.api_key,
             selected_theme=self.selected_theme,
+            selected_theme_style=self.selected_theme_style,
             selected_folders=selected_folders,
             unselected_folders=unselected_folders,
             message=message,

@@ -1,7 +1,8 @@
 {
     "api_key": "Enter API key",
     "title": "Enter your Title Here",
-    "selected_theme": "light",
+    "selected_theme": "theme_one",
+    "selected_theme_style": "light",
     "refresh_interval": "3600",
     "folders": [],
     "selected_folders": []

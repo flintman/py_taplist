@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('/static/images/background.jpg') no-repeat center center;
+    background: url('/static/theme_one/images/background.jpg') no-repeat center center;
     background-color: black;
 }
 
@@ -166,7 +166,7 @@ h3 {
     position: relative;
     width: 50px;
     height: 100%; /* Match beer block height */
-    background: url('/static/images/tap-handle.png') no-repeat center center;
+    background: url('/static/theme_one/images/tap-handle.png') no-repeat center center;
     background-size: contain;
     margin-right: 20px;
 }
