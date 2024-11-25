@@ -29,6 +29,7 @@
             <label for="theme">Theme:</label>
             <select id="theme" name="theme">
                 <option value="theme_one" {% if selected_theme == "theme_one" %}selected{% endif %}>Theme One</option>
+                <option value="theme_two" {% if selected_theme == "theme_two" %}selected{% endif %}>Theme Two</option>
             </select>
             <select id="theme_style" name="theme_style">
                 <option value="light" {% if selected_theme_style == "light" %}selected{% endif %}>Light</option>
@@ -36,10 +37,10 @@
             </select>
 
             <h2>Manage Folders</h2>
-            <h3>*** Select the folders you want to move,  If you select Available and or Selected folder they will move back and forth.</h3>
+            <h3>*** Select the folders you want to move, If you select Available and/or Selected folder they will move back and forth.</h3>
             <div class="folders-container">
                 <!-- Available Folders -->
-                <div class="column">
+                <div class="folder-column">
                     <h3>Available Folders</h3>
                     <select id="available-folders" name="available_folders" multiple>
                         {% for folder in unselected_folders %}
@@ -47,9 +48,9 @@
                         {% endfor %}
                     </select>
                 </div>
-
+            
                 <!-- Selected Folders -->
-                <div class="column">
+                <div class="folder-column">
                     <h3>Selected Folders</h3>
                     <select id="selected-folders" name="selected_folders" multiple>
                         {% for folder in selected_folders %}

@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/static/theme_two/images/background.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: black;
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #343a40;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Admin Button */
+.gear {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    background: #ffffff;
+    border: 2px solid #ced4da;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gear:hover {
+    background: #e9ecef;
+    color: #343a40;
+}
+
+/* Beer Container Styles */
+.wrapsAllBeersContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.holdsAllTheBeers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+    width: 100%;
+}
+
+/* Individual Tap Handle Styles */
+.tapHandleContainer {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tapHandleContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tapHandle {
+    background: #f8f9fa;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tapNumber {
+    color: #495057;
+}
+
+.oneBeer {
+    padding: 1em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.oneBeer h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.oneBeer p {
+    font-size: 1rem;
+    margin: 0.25em 0;
+}
+
+.ibu, .srm {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin-left: 0.5em;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.ibu {
+    background-color: #6c757d;
+}
+
+.srm {
+    color: #ffffff;
+}
+
+.center {
+    text-align: center;
+    color: #495057;
+}
+
+.message_center {
+    text-align: center;
+    color: #495057;
+    background-color: hwb(208 89% 5%);
+
+}
+
+/* ADMIN PAGE */
+.admin-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.columns {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+h1.center {
+    text-align: center;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+label, select, input {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.folders-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.folder-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folder-column h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.folder-column select {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+

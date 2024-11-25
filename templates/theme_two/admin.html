@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/{{ selected_theme }}/css/{{ selected_theme_style }}_styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1 class="center">Admin Panel</h1>
+        <div class="back-button">
+            <a href="{{ url_for('taplist') }}" class="button">Back to Taplist</a>
+        </div>
+        <form method="POST">
+            <div class="columns">
+                <!-- Site Settings Column -->
+                <div class="column">
+                    <h2>Site Settings</h2>
+                    <label for="title">Taplist Title:</label>
+                    <input type="text" id="title" name="title" value="{{ title }}" required>
+
+                    <h2>Refresh Page (in sec, default: 1 hour = 3600)</h2>
+                    <label for="refresh_interval">Refresh Interval:</label>
+                    <input type="text" id="refresh_interval" name="refresh_interval" value="{{ refresh_interval }}">
+
+                    <h2>Select Theme</h2>
+                    <label for="theme">Theme:</label>
+                    <select id="theme" name="theme">
+                        <option value="theme_one" {% if selected_theme == "theme_one" %}selected{% endif %}>Theme One</option>
+                        <option value="theme_two" {% if selected_theme == "theme_two" %}selected{% endif %}>Theme Two</option>
+                    </select>
+                    <label for="theme_style">Style:</label>
+                    <select id="theme_style" name="theme_style">
+                        <option value="light" {% if selected_theme_style == "light" %}selected{% endif %}>Light</option>
+                        <option value="dark" {% if selected_theme_style == "dark" %}selected{% endif %}>Dark</option>
+                    </select>
+                </div>
+
+                <!-- Beer Settings Column -->
+                <div class="column">
+                    <h2>Brewers Friend API Key</h2>
+                    <label for="api_key">API Key:</label>
+                    <input type="text" id="api_key" name="api_key" value="{{ api_key }}">
+
+                    <h2>Manage Folders</h2>
+                    <p>Select the folders you want to move. Selecting folders in **Available** or **Selected** will move them back and forth.</p>
+
+                    <div class="folders-container">
+                        <!-- Available Folders -->
+                        <div class="folder-column">
+                            <h3>Available Folders</h3>
+                            <select id="available-folders" name="available_folders" multiple>
+                                {% for folder in unselected_folders %}
+                                <option value="{{ folder }}">{{ folder }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Selected Folders -->
+                        <div class="folder-column">
+                            <h3>Selected Folders</h3>
+                            <select id="selected-folders" name="selected_folders" multiple>
+                                {% for folder in selected_folders %}
+                                <option value="{{ folder }}">{{ folder }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Save Changes</button>
+            <p>{{ message }}</p>
+        </form>
+    </div>
+</body>
+</html>

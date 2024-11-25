@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/static/theme_two/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #e0e0e0;
+    text-align: center;
+    background-color: #1e1e1e; 
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Admin Button */
+.gear {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #e0e0e0; /* Light icon color */
+    background: #333333; /* Dark background for contrast */
+    border: 2px solid #555555;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.gear:hover {
+    background: #555555;
+    color: #ffffff;
+}
+
+/* Beer Container Styles */
+.wrapsAllBeersContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.holdsAllTheBeers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+    width: 100%;
+}
+
+/* Individual Tap Handle Styles */
+.tapHandleContainer {
+    background: #1e1e1e; /* Dark card background */
+    border: 1px solid #333333; /* Subtle border */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tapHandleContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+.tapHandle {
+    background: #333333; /* Darker background */
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em;
+    border-bottom: 1px solid #444444;
+}
+
+.tapNumber {
+    color: #bbbbbb; /* Lighter gray */
+}
+
+.oneBeer {
+    padding: 1em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.oneBeer h2 {
+    font-size: 1.5rem;
+    color: #007bff; /* Standout blue for beer title */
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.oneBeer p {
+    font-size: 1rem;
+    margin: 0.25em 0;
+    color: #e0e0e0;
+}
+
+.ibu, .srm {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin-left: 0.5em;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: #121212; /* Text inside badges */
+}
+
+.ibu {
+    background-color: #6c757d;
+}
+
+.srm {
+    background-color: #ff5722; /* SRM badge with a warm color */
+}
+
+.center {
+    text-align: center;
+    color: #bbbbbb; /* Muted gray */
+}
+
+.message_center {
+    text-align: center;
+    color: #bbbbbb;
+    background-color: #121212
+
+}
+
+/* Admin Section Styles */
+.admin-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    background-color: #1e1e1e; /* Dark admin background */
+}
+
+.columns {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    border: 1px solid #333333;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2b2b; /* Slightly lighter dark */
+}
+
+h1.center {
+    text-align: center;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+label, select, input {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.folders-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.folder-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.folder-column h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.folder-column select {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.8);
+}

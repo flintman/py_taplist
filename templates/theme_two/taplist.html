@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="{{ refresh_interval }}">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/{{ selected_theme }}/css/{{ selected_theme_style }}_styles.css">
+</head>
+<body>
+    <a href="/admin" class="gear">⚙️</a>
+    <h1>{{ title }}</h1>
+
+    <div class="wrapsAllBeersContainer">
+        <div id="holdsAllTheBeers" class="holdsAllTheBeers">
+            {% if message %}
+                <p class="message_center">{{ message }}</p>
+            {% elif beers %}
+                {% for beer in beers %}
+                <div class="tapHandleContainer">
+                    <!-- Tap Handle -->
+                    <div class="tapHandle">
+                        Tap #{{ loop.index }}
+                    </div>
+                    <!-- Beer Block -->
+                    <div class="oneBeer">
+                        <h2>{{ beer.title }}</h2>
+                        <p><b>Style:</b> {{ beer.stylename }}</p>
+                        <p>
+                            <b>ABV:</b> {{ beer.abv_alt | round(2) }}%
+                            <span class="ibu"><b>IBU:</b> {{ beer.ibutinseth }}</span>
+                            <span class="srm" style="background-color: {{ srm_color(beer.srmmorey) }}"><b>SRM:</b>{{ beer.srmmorey }}</span>
+                        </p>
+                        <p><b>Brew Date:</b> {{ beer.userdate }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="message_center">No beers to display.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
