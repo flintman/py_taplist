@@ -1,2 +1,2 @@
 <?xml version='1.0' encoding='utf-8'?>
-<beers></beers>
+<beers><beer><title>Test Beer</title><stylename>IPA</stylename><abv_alt>6.5</abv_alt><ibutinseth>45</ibutinseth><srmmorey>8</srmmorey><userdate>2024-01-01</userdate><id>123</id></beer></beers>

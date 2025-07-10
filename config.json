@@ -1,9 +1,9 @@
 {
-    "api_key": "Enter API key",
     "title": "Enter your Title Here",
     "selected_theme": "theme_one",
     "selected_theme_style": "light",
-    "refresh_interval": "3600",
+    "refresh_interval": 3600,
+    "admin_password": "admin",
     "folders": [],
     "selected_folders": []
 }
